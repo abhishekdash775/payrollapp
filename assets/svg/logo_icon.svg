@@ -1,0 +1,4 @@
+<svg width="120" height="120" viewBox="200 110 100 120" xmlns="http://www.w3.org/2000/svg">
+  <path d="M200 140 Q 200 110 230 110 L 300 110 L 300 200 Q 300 230 270 230 L 200 230 Z" fill="black" />
+  <text x="250" y="195" font-family="cursive, 'Brush Script MT'" font-size="62" fill="white" text-anchor="middle" font-style="italic">Me</text>
+</svg>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "852826719839",
+    "project_id": "meloshop-5d34b",
+    "storage_bucket": "meloshop-5d34b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852826719839:android:837119d7f2c84256a4fdea",
+        "android_client_info": {
+          "package_name": "com.example.payrollapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV_Qhv1JgHQ-UlRjUFJFXrKK_L7b8F8lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

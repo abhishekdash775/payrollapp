@@ -1,0 +1,18 @@
+<svg width="200" height="10" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+
+<path d="M230 115 
+C 200 115, 200 115, 200 145 
+L 200 238 
+L 293 238 
+C 323 238, 323 238, 323 208 
+L 323 115 
+Z" fill="black"/>
+
+<text x="261" y="198"
+font-family="Brush Script MT, cursive"
+font-size="64"
+fill="white"
+text-anchor="middle"
+font-style="italic">Me</text>
+
+</svg>

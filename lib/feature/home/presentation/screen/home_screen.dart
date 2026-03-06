@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           return SafeArea(
             child: Container(
               color: Theme.of(context).colorScheme.onPrimary,
-              child: RefreshIndicator.noSpinner(
+              child: RefreshIndicator(
                 onRefresh: () async => controller.onRefresh(),
                 child: CustomScrollView(
                   controller: controller.scrollController,
@@ -248,6 +248,35 @@ class HomeScreen extends StatelessWidget {
                                   ),
                             ),
                           ),
+                    if (controller.hasError)
+                      SliverToBoxAdapter(
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.wifi_off,
+                                size: 60,
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                              const SizedBox(height: 16),
+
+                              Text(
+                                controller.errorMessage,
+                                style: Theme.of(context).textTheme.titleMedium,
+                              ),
+
+                              const SizedBox(height: 20),
+
+                              ElevatedButton(
+                                onPressed: controller.onRefresh,
+                                child: const Text("Retry"),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
                     if (controller.isLoading)
                       SliverPadding(padding: EdgeInsets.only(bottom: 20)),
                     if (controller.isLoading)

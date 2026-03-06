@@ -22,6 +22,8 @@ class HomeScreenController extends GetxController {
   ScrollController scrollController = ScrollController();
   bool hasMore = true;
   bool isLoading = false;
+  bool hasError = false;
+  String errorMessage = "";
   bool isInitialLoading = true;
   String? userName = "";
   int currentPage = 1;
@@ -110,16 +112,18 @@ class HomeScreenController extends GetxController {
         }
         hasMore = newItems.length == limit;
         if (hasMore) currentPage++;
-        // await localRepo.insertPageProducts(newItems, currentPage);
+        await localRepo.insertPageProducts(newItems, currentPage);
       },
       onError: (message) async {
-        // final offlineProducts = await localRepo.getProductsByPage(currentPage);
-        // if (offlineProducts.isNotEmpty) {
-        //   items.addAll(offlineProducts);
-        //   currentPage++;
-        // } else {
-        //   hasMore = false;
-        // }
+        final offlineProducts = await localRepo.getProductsByPage(currentPage);
+        if (offlineProducts.isNotEmpty) {
+          items.addAll(offlineProducts);
+          currentPage++;
+        } else {
+          hasMore = false;
+        }
+        hasError = true;
+        errorMessage = "No internet connection";
         Get.snackbar("Error", message, snackPosition: SnackPosition.BOTTOM);
       },
     );
